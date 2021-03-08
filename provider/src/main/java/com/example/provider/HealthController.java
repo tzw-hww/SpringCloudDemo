@@ -6,10 +6,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Helloo {
+public class HealthController {
 
-    @RequestMapping("/hello")
-    public String getHello() {
-        return "Hi";
+    @Autowired
+    HealthStatusService healthStatusService;
+
+    @RequestMapping("/health")
+    public String getHealth(@RequestParam("status") Boolean status){
+
+        healthStatusService.setStatus(status);
+        return status.toString();
     }
 }
