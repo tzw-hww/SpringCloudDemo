@@ -10,6 +10,8 @@ public class Helloo {
 
     @RequestMapping("/hello")
     public String getHello() {
+
+
         return "Hi";
     }
 }

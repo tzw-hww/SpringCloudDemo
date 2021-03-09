@@ -33,6 +33,8 @@ public class A {
     @Autowired
     LoadBalancerClient balancerClient;
 
+    @Autowired
+    RestTemplate restTemplate;
 
     @RequestMapping("/a")
     public String getA() {
@@ -126,14 +128,13 @@ public class A {
      */
     @RequestMapping("/f")
     public String getF() {
-        RestTemplate restTemplate = new RestTemplate();
         ServiceInstance provider = balancerClient.choose("provider");
         String url = "http://" + provider.getHost() + ":" + provider.getPort() + "/hello";
         System.out.println(url);
         String forObject = restTemplate.getForObject(url, String.class);
         System.out.println(forObject);
 
-        return "f";
+        return "调用的端口为："+provider.getPort()+":"+forObject;
     }
 
 
