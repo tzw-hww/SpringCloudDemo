@@ -1,10 +1,10 @@
 package com.example.consumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
-import org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class B {
 
     @Autowired
-    RibbonLoadBalancerClient loadBalancerClient;
+    LoadBalancerClient loadBalancerClient;
 
     @Autowired
     RestTemplate restTemplate;
@@ -32,7 +32,7 @@ public class B {
         String url = "http://" + provider.getHost() + ":" + provider.getPort() + "/hello";
         System.out.println(url);
         String forObject = restTemplate.getForObject(url, String.class);
-        return "调用的端口为："+provider.getPort()+":"+forObject;
+        return "调用的端口666666："+provider.getPort()+":"+forObject;
 
 
     }

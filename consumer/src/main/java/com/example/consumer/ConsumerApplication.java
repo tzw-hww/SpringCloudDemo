@@ -23,8 +23,8 @@ public class ConsumerApplication {
         return  new RestTemplate();
     }
 
-    @Bean
-    public IRule myRule(){
-        return new RandomRule();
-    }
+//    @Bean
+//    public IRule myRule(){
+//        return new RandomRule();
+//    }
 }
