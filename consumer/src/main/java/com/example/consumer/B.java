@@ -71,7 +71,5 @@ public class B {
         System.out.println(url);
         String forObject = restTemplate.getForObject(url, String.class);
         return "调用的端口为："+provider.getPort()+":"+forObject;
-
-
     }
 }
