@@ -1,6 +1,6 @@
 package com.example.provider;
 
-import com.tzw.user.UserApi;
+import com.example.userapi.UserApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 

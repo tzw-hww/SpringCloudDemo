@@ -10,8 +10,6 @@ public class FeignController{
     @Autowired
     AppInter appInter;
 
-//    @Autowired
-//    MyApi myApi;
 
     @RequestMapping("/helloOne")
     public String HelloOne(){

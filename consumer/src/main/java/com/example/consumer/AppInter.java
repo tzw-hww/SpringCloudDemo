@@ -1,11 +1,11 @@
 package com.example.consumer;
 
-import com.tzw.user.UserApi;
+import com.example.userapi.UserApi;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "provider")
+//@FeignClient(name = "provider",fallback = FallbackService.class)
+@FeignClient(name = "provider",fallbackFactory = FallbackFactoryService.class)
 public interface AppInter extends UserApi {
 
     @RequestMapping("/helloOne")
