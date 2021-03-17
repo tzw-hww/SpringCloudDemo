@@ -11,7 +11,7 @@ public class AController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("user")
+    @RequestMapping("/user")
     public String getUser(){
         String user = userService.getUser();
         return user;

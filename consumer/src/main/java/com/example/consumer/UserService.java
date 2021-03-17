@@ -14,7 +14,7 @@ public class UserService {
 
     @HystrixCommand(fallbackMethod = "back")
     public String getUser(){
-        String url = "http://provider/getUser";
+        String url = "http://provider/user";
         String forObject = restTemplate.getForObject(url, String.class);
         return forObject;
     }
