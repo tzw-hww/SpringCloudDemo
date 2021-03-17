@@ -1,6 +1,7 @@
 package com.example.consumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,8 @@ public class FeignController{
     @Autowired
     AppInter appInter;
 
+    @Value("${server.port}")
+    private String port;
 
     @RequestMapping("/helloOne")
     public String HelloOne(){
@@ -33,7 +36,7 @@ public class FeignController{
 
     @RequestMapping("/helloFour")
     public String helloFour(){
-        return appInter.getUserbyId("1");
+        return "consumer:"+port+"---------->"+appInter.getUserbyId("1");
     }
 
 
