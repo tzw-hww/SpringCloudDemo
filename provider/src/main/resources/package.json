@@ -1,0 +1,6 @@
+{
+  "msgtype": "text",
+  "text": {
+    "content": "服务预警 : 【provider】【服务地址】http://192.168.137.1:9999/【状态】OFFLINE【详情】{\"exception\":\"org.springframework.web.reactive.function.client.WebClientRequestException\",\"message\":\"Connection refused: no further information: /192.168.137.1:9999; nested exception is io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /192.168.137.1:9999\"}"
+  }
+}
